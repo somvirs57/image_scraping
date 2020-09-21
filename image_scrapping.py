@@ -44,7 +44,7 @@ def download_images():
     elem1 = driver.find_element_by_id('islmp')
     sub = elem1.find_elements_by_tag_name('img')
     
-    
+    count=0
     for j,i in enumerate(sub):
         if j < n_images:
             src = i.get_attribute('src')                         
@@ -57,7 +57,7 @@ def download_images():
                 else:
                     raise TypeError
             except Exception as e:              #catches type error along with other errors
-                print('fail')
+                print(f'fail with error {e}')
     
     driver.close()
     
